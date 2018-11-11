@@ -5,12 +5,10 @@ endif
 syntax region domeKeyComment display start="#" end="$" contains=@Spell
 syntax region domeKeySpecialKey display start="<" end=">" contained contains=domeKeySpecialKeyKeyword
 
-" syntax match domeKeyMapDefinition "map\s+" contains=domeKeyMapDefinitionStart,domeKeyMapDefinitionTrigger,domeKeyMapDefinitionAction
-" syntax match domeKeyMapDefinitionStart contained "map" contains=domeKeyType
-" syntax region domeKeyMapDefinition start="^" end="$" contains=domeKeyMapDefinitionStart,domeKeyDefinitionTrigger,domeKeyMapDefinitionAction
-syntax match domeKeyMapDefinitionStart "^\s*map" contains=domeKeyType nextgroup=domeKeyDefinitionTrigger skipwhite
-syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained contains=domeKeySpecialKey nextgroup=domeKeyMapDefinitionAction skipwhite
-" syntax match domeKeyMapDefinitionAction "[^\n]" contained contains=domeKeySpecialKey
+syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained contains=domeKeySpecialKey
+
+syntax match domeKeyMapDefinitionStart "^\s*map" contains=domeKeyType nextgroup=domeKeyMapDefinitionTrigger skipwhite
+syntax match domeKeyMapDefinitionTrigger "" contained contains=domeKeyDefinitionTrigger nextgroup=domeKeyMapDefinitionAction skipwhite
 syntax match domeKeyMapDefinitionAction ".*$" contained contains=domeKeySpecialKey
 
 syntax keyword domeKeyType contained containedin=domeKeyMapDefinitionStart map cmd mode
