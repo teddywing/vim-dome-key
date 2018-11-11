@@ -3,6 +3,8 @@ if exists('b:current_syntax')
 endif
 
 syntax region domeKeyComment display start="#" end="$" contains=@Spell
+
+" Special keys
 syntax region domeKeySpecialKey display matchgroup=domeKeySpecialKeyGroup start="<" end=">" contained contains=domeKeySpecialKeyKeyword
 
 syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained contains=domeKeySpecialKey
