@@ -3,7 +3,7 @@ if exists('b:current_syntax')
 endif
 
 syntax region domeKeyComment display start="#" end="$" contains=@Spell
-syntax region domeKeySpecialKey display start="<" end=">" contained contains=domeKeyTriggerKeyKeyword,domeKeySpecialKeyKeyword
+syntax region domeKeySpecialKey display start="<" end=">" contained contains=domeKeySpecialKeyKeyword
 
 syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained contains=domeKeySpecialKey
 
@@ -14,8 +14,6 @@ syntax match domeKeyMapDefinitionAction ".*$" contained contains=domeKeySpecialK
 syntax keyword domeKeyType contained containedin=domeKeyMapDefinitionStart map cmd mode
 
 syntax case ignore
-syntax keyword domeKeyTriggerKeyKeyword contained Up Play Down
-
 syntax keyword domeKeySpecialKeyKeyword contained F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F12
 syntax keyword domeKeySpecialKeyKeyword contained Left Right Down Up
 syntax keyword domeKeySpecialKeyKeyword contained Home End PageUp PageDown
@@ -40,7 +38,6 @@ syntax case match
 highlight default link domeKeyComment Comment
 highlight default link domeKeyType Statement
 highlight default link domeKeySpecialKey Special
-highlight default link domeKeyTriggerKeyKeyword domeKeySpecialKey
 highlight default link domeKeySpecialKeyKeyword domeKeySpecialKey
 
 " TODO:
