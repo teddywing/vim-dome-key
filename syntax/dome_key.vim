@@ -5,9 +5,10 @@ endif
 syntax region domeKeyComment display start="#" end="$" contains=@Spell
 
 " Special keys
-syntax region domeKeySpecialKey display matchgroup=domeKeySpecialKeyGroup start="<" end=">" contained contains=domeKeySpecialKeyKeyword
+syntax region domeKeySpecialKey display matchgroup=domeKeySpecialKeyGroup start="[^\\]<" end=">" contained contains=domeKeySpecialKeyKeyword
 
-syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained contains=domeKeySpecialKey
+syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained
+
 
 " Map definitions
 syntax match domeKeyMapDefinitionStart "^\s*map" contains=domeKeyType nextgroup=domeKeyMapDefinitionTrigger skipwhite
@@ -54,6 +55,7 @@ highlight default link domeKeyComment Comment
 highlight default link domeKeyType Statement
 highlight default link domeKeySpecialKeyGroup Special
 highlight default link domeKeySpecialKeyKeyword domeKeySpecialKeyGroup
+highlight default link domeKeyDefinitionTrigger domeKeySpecialKeyGroup
 
 " TODO:
 " - Escaping only in actions
