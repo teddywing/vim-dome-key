@@ -60,9 +60,5 @@ highlight default link domeKeySpecialKeyKeyword domeKeySpecialKeyGroup
 highlight default link domeKeyDefinitionTrigger domeKeySpecialKeyGroup
 highlight default link domeKeySpecialKeyEscape Special
 
-" TODO:
-" - Escaping only in actions
-" - Don't highlight special keys inside command actions
-" - Trigger keys are the only special keys after a map kind
 
 let b:current_syntax = 'dome_key'
