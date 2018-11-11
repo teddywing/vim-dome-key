@@ -3,7 +3,7 @@ if exists('b:current_syntax')
 endif
 
 syntax region domeKeyComment display start="#" end="$" contains=@Spell
-syntax region domeKeySpecialKey display start="<" end=">" contained contains=domeKeySpecialKeyKeyword
+syntax region domeKeySpecialKey display start="<" end=">" contained contains=domeKeyTriggerKeyKeyword,domeKeySpecialKeyKeyword
 
 syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained contains=domeKeySpecialKey
 
@@ -40,6 +40,7 @@ syntax case match
 highlight default link domeKeyComment Comment
 highlight default link domeKeyType Statement
 highlight default link domeKeySpecialKey Special
+highlight default link domeKeyTriggerKeyKeyword domeKeySpecialKey
 highlight default link domeKeySpecialKeyKeyword domeKeySpecialKey
 
 " TODO:
