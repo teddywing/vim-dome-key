@@ -19,6 +19,11 @@ syntax match domeKeyCmdDefinitionStart "^\s*cmd" contains=domeKeyType nextgroup=
 syntax match domeKeyCmdDefinitionTrigger "[^ \t]\+" contained contains=domeKeyDefinitionTrigger nextgroup=domeKeyCmdDefinitionAction skipwhite
 syntax match domeKeyCmdDefinitionAction ".*$" contained
 
+" Mode definitions
+syntax match domeKeyModeDefinitionStart "^\s*mode" contains=domeKeyType nextgroup=domeKeyModeDefinitionTrigger skipwhite
+syntax match domeKeyModeDefinitionTrigger "[^ \t]\+" contained contains=domeKeyDefinitionTrigger nextgroup=domeKeyModeDefinitionAction skipwhite
+syntax region domeKeyModeDefinitionAction matchgroup=NONE start="{" end="}" contained contains=domeKeyMapDefinitionStart,domeKeyCmdDefinitionStart,domeKeyComment
+
 
 syntax keyword domeKeyType contained containedin=domeKeyMapDefinitionStart map cmd mode
 
