@@ -8,7 +8,7 @@ syntax region domeKeySpecialKey display start="<" end=">" contained contains=dom
 syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained contains=domeKeySpecialKey
 
 syntax match domeKeyMapDefinitionStart "^\s*map" contains=domeKeyType nextgroup=domeKeyMapDefinitionTrigger skipwhite
-syntax match domeKeyMapDefinitionTrigger ".*" contained contains=domeKeyDefinitionTrigger nextgroup=domeKeyMapDefinitionAction skipwhite
+syntax match domeKeyMapDefinitionTrigger "[^ \t]\+" contained contains=domeKeyDefinitionTrigger nextgroup=domeKeyMapDefinitionAction skipwhite
 syntax match domeKeyMapDefinitionAction ".*$" contained contains=domeKeySpecialKey
 
 syntax keyword domeKeyType contained containedin=domeKeyMapDefinitionStart map cmd mode
