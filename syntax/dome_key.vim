@@ -14,6 +14,7 @@ syntax match domeKeyMapDefinitionAction ".*$" contained contains=domeKeySpecialK
 syntax keyword domeKeyType contained containedin=domeKeyMapDefinitionStart map cmd mode
 
 syntax case ignore
+syntax keyword domeKeySpecialKeyKeyword contained Nop
 syntax keyword domeKeySpecialKeyKeyword contained F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F12
 syntax keyword domeKeySpecialKeyKeyword contained Left Right Down Up
 syntax keyword domeKeySpecialKeyKeyword contained Home End PageUp PageDown
