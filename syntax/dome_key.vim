@@ -7,7 +7,8 @@ syntax region domeKeyComment display start="#" end="$" contains=@Spell
 " Special keys
 syntax match domeKeySpecialKeyEscape display "\\<"he=e-1
 syntax match domeKeySpecialKeyEscape display "\\\\"
-syntax region domeKeySpecialKey display matchgroup=domeKeySpecialKeyGroup start="[^\\]<" end=">" contained contains=domeKeySpecialKeyKeyword
+syntax region domeKeySpecialKey display matchgroup=domeKeySpecialKeyGroup start="[^\\]<" end=">" contained contains=domeKeySpecialKeyKeyword,domeKeySpecialKeyModifier
+syntax match domeKeySpecialKeyModifier display "\c[DACS]-" contained
 
 syntax match domeKeyDefinitionTrigger "\c\(<\(Up\|Play\|Down\)>\)\+" contained
 
@@ -58,6 +59,7 @@ highlight default link domeKeyType Statement
 highlight default link domeKeySpecialKeyGroup Special
 highlight default link domeKeySpecialKeyKeyword domeKeySpecialKeyGroup
 highlight default link domeKeyDefinitionTrigger domeKeySpecialKeyGroup
+highlight default link domeKeySpecialKeyModifier domeKeySpecialKeyGroup
 highlight default link domeKeySpecialKeyEscape Special
 
 
